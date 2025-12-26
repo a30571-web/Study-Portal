@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consola Python - Khaby Edition</title>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+</head>
+<body>
+    <h1>🐍 Consola Python Live</h1>
+    
+    <textarea id="yourcode" cols="80" rows="20">
+# Exemplo: Estrutura Base de um Site
+# Khaby says: Just do this! 🤲
+
+khaby_art = """
+   Let's keep it simple.
+          /
+   🤲  🤲   ___  
+    /    \ (o o) 
+   |      | \_/ 
+   |  ||  |--|--|  
+    \____/   |  |
+"""
+
+print(khaby_art)
+print("<!DOCTYPE html><html><body><h1>Site Live!</h1></body></html>")
+    </textarea><br>
+    
+    <button onclick="runit()">RUN (Executar)</button>
+    <pre id="output"></pre> <script>
+    function outf(text) { 
+        var mypre = document.getElementById("output"); 
+        mypre.innerHTML = mypre.innerHTML + text; 
+    } 
+    function runit() { 
+       var code = document.getElementById("yourcode").value; 
+       var mypre = document.getElementById("output"); 
+       mypre.innerHTML = ""; 
+       Sk.configure({output:outf}); 
+       Sk.misceval.asyncToPromise(function() {
+           return Sk.importMainWithBody("<stdin>", false, code, true);
+       });
+    } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html" class="active">🏠 Página Inicial</a>
+
+  <button class="dropdown-btn">📅 1_tgpsi ▾</button>
+  <div class="dropdown-container">
+      <button class="sub-dropdown-btn">💻 PSI ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M1: Algoritmia</a><a href="#">M2: Controlo</a>
+          <a href="#">M3: Funções</a><a href="#">M4: Estáticas</a>
+      </div>
+      <button class="sub-dropdown-btn">🌐 RC ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M1: Redes</a><a href="#">M2: OSI/TCP-IP</a><a href="#">M3: Transmissão</a>
+      </div>
+      <button class="sub-dropdown-btn">🖥️ AC ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M1: Digitais</a><a href="#">M2: Arquitetura</a><a href="#">M3: Periféricos</a>
+      </div>
+      <a href="#" class="sub-item">📐 Matemática</a><a href="#" class="sub-item">⚡ FQ</a>
+      <a href="#" class="sub-item">📚 Português</a><a href="#" class="sub-item">🇬🇧 Inglês</a><a href="#" class="sub-item">📱 TIC</a>
+  </div>
+
+  <button class="dropdown-btn">📅 2_tgpsi ▾</button>
+  <div class="dropdown-container">
+      <button class="sub-dropdown-btn">💻 PSI ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M5: Dinâmicas</a><a href="#">M6: SQL</a><a href="#">M7: Visual</a><a href="#">M8: Eventos</a><a href="#">M9: POO</a>
+      </div>
+      <button class="sub-dropdown-btn">🌍 ASW ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M1: HTML/CSS</a><a href="#">M2: JS/DOM</a><a href="#">M3: PHP</a>
+      </div>
+      <a href="#" class="sub-item">📐 Matemática</a><a href="#" class="sub-item">⚡ FQ</a>
+      <a href="#" class="sub-item">📚 Português</a><a href="#" class="sub-item">🇬🇧 Inglês</a>
+  </div>
+
+  <button class="dropdown-btn">📅 3_tgpsi ▾</button>
+  <div class="dropdown-container">
+      <button class="sub-dropdown-btn">💻 PSI ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M10: ASP.NET</a><a href="#">M11: APIs</a><a href="#">M12: Gestão</a><a href="#">M13-18: Projetos</a>
+      </div>
+      <button class="sub-dropdown-btn">🌐 RC ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M7: Segurança</a><a href="#">M8: Admin</a><a href="#">M9: WAN</a>
+      </div>
+      <button class="sub-dropdown-btn">🌍 ASW ▾</button>
+      <div class="sub-dropdown-container">
+          <a href="#">M4: PHP Avançado</a><a href="#">M5: Frameworks</a><a href="#">M6: CMS</a>
+      </div>
+      <a href="#" class="sub-item">📐 Matemática</a><a href="#" class="sub-item">📚 Português</a>
+  </div>
+
+  <a href="#consolas-section">💻 Consolas Live</a>
+  <a href="#">📝 Notas</a>
+</div>
+
+<div id="main">
+  <div class="top-bar">
+    <div class="left-group">
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <input type="text" id="moduleSearch" placeholder="Pesquisar módulo..." class="search-bar">
+    </div>
+    <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+  </div>
+
+  <div id="consolas-section" class="content-padding">
+    <div class="w3-container">
+        <div class="w3-header">
+            <h3 style="margin:0; color:#333;">Try it Yourself</h3>
+            <select id="lang-select" onchange="updateEditor()">
+                <option value="html">HTML/CSS (Frontend)</option>
+                <option value="javascript">JavaScript (Node.js)</option>
+                <option value="python">Python</option>
+                <option value="sql">SQL Simulator</option>
+                <option value="php">PHP</option>
+            </select>
+            <button class="w3-run-btn" onclick="runEditor()">Run »</button>
+        </div>
+        <div class="w3-editor-wrapper">
+            <div class="w3-input-side">
+                <textarea id="w3-text-editor" spellcheck="false"></textarea>
+            </div>
+            <div class="w3-output-side">
+                <div id="w3-result-header">Resultado:</div>
+                <iframe id="w3-iframe-result"></iframe>
+                <div id="w3-terminal-result" class="terminal-style"></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
